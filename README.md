@@ -13,7 +13,7 @@ Functional programming (FP) provides many advantages, and its popularity has bee
 ## Functional Programming References
 * [Functional Programming in Go](https://deepu.tech/functional-programming-in-go/)
 * [Eloquent Javascript Functional Programming](https://eloquentjavascript.net/1st_edition/chapter6.html)
-* [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) 
+* [Closures Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) 
 
 ## Goals
 FP style helps you write less code in a more concise and expressive way, with fewer errors. And just sharing my knowledge to learn ✌️
