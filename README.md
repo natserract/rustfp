@@ -1,6 +1,6 @@
 # Functional Programming di Rust
 
-A month ago when I first developed a non-commercial project using ReasonML, I got a new experience, is a *functional programming*. This language is an alternative syntax from [OCaml](https://ocaml.org/). OCaml itself is a purely functional language, the features offered are interesting. For example: type inference, strongly type system, algebraic datatypes, and many more. Interesting right?
+A month ago when I first developed a non-commercial project using [ReasonML](https://reasonml.github.io/), I got a new experience, is a *functional programming*. This language is an alternative syntax from [OCaml](https://ocaml.org/). OCaml itself is a purely functional language, the features offered are interesting. For example: type inference, strongly type system, algebraic datatypes, and many more. Interesting right?
 
 Now after trying that, I began to interest functional programming. Finally i tried to implement the functional paradigm in a different language, namely [Rust](http://rustlang.org/).
 
@@ -18,7 +18,6 @@ The question is, is a **Rust functional language?** the answer is, no. Although 
 * [Higher Order Functions(HOF)](#hof)
 * [Lazy evaluations](#lazy)
 
-<br/>
 
 ## <a id="primitive"></a>Primitive Types
 In order not to jump right away, it would be nice if we had to know several data types in Rust. This also applies to all programming languages.
