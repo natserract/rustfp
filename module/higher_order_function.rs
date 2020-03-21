@@ -11,10 +11,10 @@
 **/
 
 pub fn hof() {
-    fn map<F>(arr: &[i32], callback: F) -> Vec<i32> where F: Fn(&i32) -> i32{
+    fn map<F>(arr: &[i32], func: F) -> Vec<i32> where F: Fn(&i32) -> i32{
         let mut new_array: Vec<i32> = vec![];
         for i in arr.iter() {
-            new_array.push(callback(i))
+            new_array.push(func(i))
         }
         return new_array
     }

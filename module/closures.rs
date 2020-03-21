@@ -11,18 +11,16 @@
 **/
 
 pub fn closures() {
-    fn fmt<A>(str1: &str, callback: A) -> String where A: Fn(String) -> String {
-        let mut empty_str = String::new();
+    fn fmt<A>(prev_str: &str, func: A) -> String where A: Fn(String) -> String {
+        let mut new_str = String::new();
             {
-                let str2: &str = "dolor sit amet";
-                empty_str.push_str(str1);
-                empty_str.push_str(str2);
+                let prev_str2: &str = "dolor sit amet";
+                new_str.push_str(prev_str);
+                new_str.push_str(prev_str2);
             }
-        callback(empty_str)
+        func(new_str)
     }
    
     let r_txt = "Lorem ipsum ";
-    assert_eq!("Lorem ipsum dolor sit amet", fmt(r_txt, |txt| { 
-        txt.to_string()
-    }))
+    assert_eq!("Lorem ipsum dolor sit amet", fmt(r_txt, |txt| txt.to_string()))
 }
