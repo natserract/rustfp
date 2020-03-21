@@ -28,10 +28,10 @@ trait Currying {
 
 impl Currying for State {
     fn add(&self) -> i32 {
-        (self.x + self.y) * self.z
+        (&self.x + &self.y) * &self.z
     }
     fn remove(&self) -> i32 {
-        (self.x + self.y) / self.z
+        (&self.x + &self.y) / &self.z
     }
 }
 
