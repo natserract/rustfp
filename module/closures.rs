@@ -13,16 +13,19 @@
 **/
 
 pub fn closures() {
-    fn fmt<A>(prev_str: &str, func: A) -> String where A: Fn(String) -> String {
+    fn fmt(prev_str: &str) -> String {
         let mut new_str = String::new();
-            {
-                let prev_str2: &str = "dolor sit amet";
-                new_str.push_str(prev_str);
-                new_str.push_str(prev_str2);
-            }
-        func(new_str)
+        
+        let closure_annotated = |next_str| -> String {
+            new_str.push_str(prev_str);
+            new_str.push_str(next_str);
+            return new_str;
+        };
+        
+       closure_annotated("dolor sit amet")
+
     }
    
     let r_txt = "Lorem ipsum ";
-    assert_eq!("Lorem ipsum dolor sit amet", fmt(r_txt, |txt| txt.to_string()))
+    assert_eq!("Lorem ipsum dolor sit amet", fmt(r_txt));
 }
