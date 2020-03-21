@@ -1,4 +1,4 @@
-# Functional Programming di Rust
+# Functional Programming in Rust
 
 A month ago when I first developed a non-commercial project using [ReasonML](https://reasonml.github.io/), I got a new experience, is a *functional programming*. This language is an alternative syntax from [OCaml](https://ocaml.org/). OCaml itself is a purely functional language, the features offered are interesting. For example: type inference, strongly type system, algebraic datatypes, and many more. Interesting right?
 
