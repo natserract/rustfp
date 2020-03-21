@@ -7,6 +7,9 @@
  Code: 
  add(5, 5, 10)
  expected output: 100
+
+ remove(50, 50, 10)
+ expected output: 10
  
 **/
 

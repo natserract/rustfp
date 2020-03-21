@@ -10,17 +10,19 @@
  
 **/
 
+
 pub fn hof() {
     fn map<F>(arr: &[i32], func: F) -> Vec<i32> where F: Fn(&i32) -> i32{
         let mut new_array: Vec<i32> = vec![];
+        
         for i in arr.iter() {
             new_array.push(func(i))
         }
         return new_array
     }
 
-    let list = vec![1, 4, 9, 16];
-    let result = map(&list, |i| *i + 2);
+    let lists = vec![1, 4, 9, 16];
+    let result = map(&lists, |i| *i + 2);
     
     assert_eq!(vec![3, 6, 11, 18], result)
 }
