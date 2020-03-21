@@ -1,7 +1,8 @@
 
 /** 
  * Lazy Evaluation
- * Lazy evaluation or non-strict evaluation is the process of delaying evaluation of an expression until it is needed
+ * Lazy evaluation or non-strict evaluation is the process of delaying evaluation 
+ * of an expression until it is needed
 
  Code: 
  x: 4

@@ -2,7 +2,8 @@
 /** 
  * Higher-Order Functions
  * Higher-order functions are functions that take other functions as arguments or return functions as their results.
- * Taking an other function as an argument is often referred as a callback function, because it is called back by the higher-order function.
+ * Taking an other function as an argument is often referred as a callback function, 
+ * because it is called back by the higher-order function.
 
  Code: 
  map(&vec![1, 2, 3], |j| j + 10)

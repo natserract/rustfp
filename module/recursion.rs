@@ -2,7 +2,9 @@
 
 /** 
  * Recursion
- * HRecursion is a technique that allows us to break down a problem into smaller pieces. This technique allows us to remove some local side effects that we perform while writing looping structures and also makes our code more expressive and readable.
+ * Recursion is a technique that allows us to break down a problem into smaller pieces. 
+ * This technique allows us to remove some local side effects that we perform while writing looping structures 
+ * and also makes our code more expressive and readable.
 
  Code: 
  Factor::factorial(3)
