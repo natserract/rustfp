@@ -220,4 +220,4 @@ assert_eq!(400, val.add_or_multiply(false));
 
 
 ## Motivation
-Functional programming (FP) provides many advantages, and its popularity has been increasing as a result. However, each programming paradigm comes with its own unique jargon and FP is no exception. By providing a glossary, i hope to make learning FP easier.
+Functional programming (FP) provides many advantages, and its popularity has been increasing as a result. However, each programming paradigm comes with its own unique jargon and FP is no exception. By providing a glossary, i hope to make learning FP easier✌️
