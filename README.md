@@ -121,7 +121,7 @@ let r2 = r1(5);
 assert_eq!(500, r2);
 
 ```
-There are 3 parameters here, namely `x`,` y`, `z` where each has a numeric data type, then in `trait` section is a *function interface*, a place for initializing functions. These traits are similar to [typescript interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html).
+There are 2 parameters here, namely `a`,`b` where each has a numeric data type, then in `trait` section is a *function interface*, a place for initializing functions. These traits are similar to [typescript interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html).
 
 
 ## <a id="recursion"></a>Recursion
