@@ -86,37 +86,40 @@ assert_eq!("Lorem ipsum dolor sit amet", fmt(r_txt));
 In this case, in `new_str.push_str ()` section where `closure_annotated` accesses the` new_str` variable then changes the value and returns it outside the scope.
 
 ## <a id="currying"></a>Currying
-A functional programming technique where we can create a function with many arguments, you know the difference between arguments and parameters? if it can't be checked here: [arguments vs parameter](https://www.techiedelight.com/difference-between-argument-parameter/).
+Currying is a process in functional programming in which we can transform a function with multiple arguments into a sequence of nesting functions. It returns a new function that expects the next argument inline.
 
 ```rust
-struct State {
-    x: i32,
-    y: i32,
-    z: i32
+#[derive(Debug)]
+struct States<'a> {
+    a: &'a i32,
+    b: &'a i32,
 }
 
 trait Currying {
-    fn add(&self) -> i32;
-    fn remove(&self) -> i32;
+    type ReturnType: Fn(i32) -> i32;
+    fn add(self) -> Self::ReturnType;
 }
 
-impl Currying for State {
-    fn add(&self) -> i32 {
-        (&self.x + &self.y) * &self.z
-    }
-    fn remove(&self) -> i32 {
-        (&self.x + &self.y) / &self.z
+impl Currying for States<'static>{
+    type ReturnType = Box<dyn Fn(i32) -> i32>;
+   
+    fn add(self) -> Self::ReturnType {
+        Box::new(move|x| {
+            x * self.a
+        })
     }
 }
 
-let result: State = State {
-        x: 100,
-        y: 100,
-        z: 2
-    };
+let r_value: States = States {
+    a: &100,
+    b: &100
+};
 
-assert_eq!(400, result.add());
-assert_eq!(100, result.remove());
+let r1 = r_value.add();
+let r2 = r1(5);
+
+assert_eq!(500, r2);
+
 ```
 There are 3 parameters here, namely `x`,` y`, `z` where each has a numeric data type, then in `trait` section is a *function interface*, a place for initializing functions. These traits are similar to [typescript interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html).
 

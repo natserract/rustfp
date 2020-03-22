@@ -14,34 +14,36 @@
  
 **/
 
-
-struct State {
-    x: i32,
-    y: i32,
-    z: i32
+#[derive(Debug)]
+struct States<'a> {
+    a: &'a i32,
+    b: &'a i32,
 }
 
 trait Currying {
-    fn add(&self) -> i32;
-    fn remove(&self) -> i32;
+    type ReturnType: Fn(i32) -> i32;
+    fn add(self) -> Self::ReturnType;
 }
 
-impl Currying for State {
-    fn add(&self) -> i32 {
-        (&self.x + &self.y) * &self.z
-    }
-    fn remove(&self) -> i32 {
-        (&self.x + &self.y) / &self.z
+impl Currying for States<'static>{
+    type ReturnType = Box<dyn Fn(i32) -> i32>;
+   
+    fn add(self) -> Self::ReturnType {
+        Box::new(move|x| {
+            x * self.a
+        })
     }
 }
 
 pub fn currying() {
-    let result: State = State {
-        x: 100,
-        y: 100,
-        z: 2
+    let r_value: States = States {
+        a: &100,
+        b: &100
     };
 
-    assert_eq!(400, result.add());
-    assert_eq!(100, result.remove());
+    let r1 = r_value.add();
+    let r2 = r1(5);
+    
+    assert_eq!(500, r2);
+
 }

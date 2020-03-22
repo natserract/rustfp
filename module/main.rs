@@ -1,4 +1,7 @@
 
+#![feature(unboxed_closures)]
+#![feature(type_alias_impl_trait)]
+
 mod closures;
 mod currying;
 mod recursion;
