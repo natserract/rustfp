@@ -14,7 +14,6 @@ The question is, is a **Rust functional language?** the answer is, no. Although 
 * [Primitive Types](#primitive)
 * [Closures](#closures)
 * [Currying](#currying)
-* [Recursion](#recursion)
 * [Higher Order Functions(HOF)](#hof)
 * [Lazy evaluations](#lazy)
 
