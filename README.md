@@ -124,36 +124,6 @@ assert_eq!(500, r2);
 There are 2 parameters here, namely `a`,`b` where each has a numeric data type, then in `trait` section is a *function interface*, a place for initializing functions. These traits are similar to [typescript interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html).
 
 
-## <a id="recursion"></a>Recursion
-Simply, recursion is a `procedure / function` that calls itself, which functions to create / process the data that you want to return.
-
-```rust
-#[allow(non_camel_case_types)] 
-type i64_t = i64;
-
-trait Factor {
-    fn factorial_tail_rec(val: i64_t) -> Self;
-    fn factorial(num: i64_t) -> Self;
-}
-
-impl Factor for i64_t {
-    fn factorial_tail_rec(val: i64_t) -> Self {
-        val
-    }
-
-    fn factorial(num: i64_t) -> Self {
-        match num {
-            0 => 1,
-            _ => num * Self::factorial_tail_rec(num - 1)
-        }
-    }
-}
-
-let result: i64_t = Factor::factorial(3); 
-assert_eq!(6, result);
-```
-This is a factorial function, where if the argument value of the parameter num `! == 0`, then that value will be multiplied by each number below it. For example `(5! = 5 * 4 * 3 * 2 * 1 = 120)`.
-
 ## <a id="hof"></a>Higher Order Functions(HOF)
 Higher order functions are functions that use other functions as parameters or as a result of returns.
 ```rust
